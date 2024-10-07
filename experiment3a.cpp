@@ -1,36 +1,45 @@
 #include <iostream>
 using namespace std;
 
-class Electricity {
-// private:
+class Electricity
+{
+    // private:
     int units;
     double billAmount;
 
 public:
-Electricity(){}  // default constructer
+    Electricity() {} // default constructer
 
-    void setUnits(int u) {
+    void setUnits(int u)
+    {
         units = u;
     }
 
-    void calculateBill() {
-        
+    void calculateBill()
+    {
 
-        if (units >= 0 && units <100) {
+        if (units >= 0 && units < 100)
+        {
             billAmount = units * 1.5;
-        }else if (units <200) {
-            billAmount = 100 * 1.5 +(units-100)*2.0;
-        } else  {
-            billAmount = (100 * 1.5) + (100 * 2) +(units-200)*3.0 ;
-        } 
+        }
+        else if (units < 200)
+        {
+            billAmount = 100 * 1.5 + (units - 100) * 2.0;
+        }
+        else
+        {
+            billAmount = (100 * 1.5) + (100 * 2) + (units - 200) * 3.0;
+        }
     }
 
-    void displayBill() {
+    void displayBill()
+    {
         cout << "Total bill amount: Rs " << billAmount << endl;
     }
 };
 
-int main() {
+int main()
+{
     Electricity customer;
 
     int units;
