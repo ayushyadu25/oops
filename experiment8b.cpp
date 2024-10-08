@@ -109,9 +109,9 @@ int main()
     v1.getRentalCost(10);
     Car c1("maruti", "swift", 2019, 3000, 4);
     c1.getRentalCost(9);
-    Motorcycle m1("honda","shine",2024,200,125);
+    Motorcycle m1("honda", "shine", 2024, 200, 125);
     m1.getRentalCost(2);
-    Bicycle b1("atlas","race",2019,100,"steel");
+    Bicycle b1("atlas", "race", 2019, 100, "steel");
     b1.getRentalCost(4);
     return 0;
 }

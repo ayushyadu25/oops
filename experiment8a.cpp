@@ -106,7 +106,7 @@ int main()
     Employee O1("Aditya", 102, 30000);
     O1.monthlyBonus();
     Professor P1("Modi", 103, 150000, "cs");
-    P1.monthlyBonus();
+    P1.monthlyBonus();   // it will not call base class 
 
     AdminStaff A1("Ayush", 104, 150000, "Data Analyst");
     A1.monthlyBonus();
