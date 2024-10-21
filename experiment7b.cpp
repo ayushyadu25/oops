@@ -20,6 +20,9 @@ public:
         cout<<"book name is : "<<bookName<<endl;
         cout<<"book id is : " <<bookId<<endl;
     }
+    void noOfBooksPresent(){
+        cout<<"No of books entered: "<<countBook-1<<endl; 
+    }
     
 };
 int Books::countBook=1;
@@ -30,5 +33,7 @@ int main(){
     b2.display();
     Books b3("avengers");
     b3.display();
+    b1.noOfBooksPresent();
+    return 0;
 }
 
