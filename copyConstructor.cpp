@@ -28,3 +28,6 @@ int main(){
     A a2(a1);
     a2.display();
 }
+
+// in =,[],(),-> operator overloading we cannot use friend function 
+// 
