@@ -2,7 +2,7 @@
 using namespace std;
 class BankAccount
 {
-private:
+protected:
     const long long accountNO;
     static int MIN_HIGH_VALUE;
     double accountBalance;
@@ -11,7 +11,6 @@ public:
     static int totalNoOfAccounts;
     BankAccount() : accountNO(totalNoOfAccounts + 188888000000)
     {
-
         totalNoOfAccounts++;
         accountBalance = 0;
     }
@@ -50,7 +49,7 @@ public:
         cout << "Your account no is : " << accountNO << endl;
         cout << "Your account balance is : " << accountBalance << endl;
     }
-    bool isHhighValuePerson()
+    bool isHighValuePerson()
     {
         if (accountBalance >= MIN_HIGH_VALUE)
             return true;
@@ -64,23 +63,24 @@ int BankAccount::MIN_HIGH_VALUE = 1000;
 class Bank : public BankAccount
 {
 public:
-    BankAccount *account[100];
+    BankAccount *account[50];
 
     Bank()
     {
+        accountBalance = 0;
     }
     void addAccount(double money)
     {
-        BankAccount *account = new BankAccount(money);
+        account[totalNoOfAccounts] = new BankAccount(money);
     }
 
     void displayHighValueAccount()
     {
-        for (int i = 0; i < totalNoOfAccounts; i++)
+        for (int i = 1; i <= totalNoOfAccounts; i++)
         {
-            if ((*account)[i].isHhighValuePerson() == true)
+            if (account[i]->isHighValuePerson() == true)
             {
-                (*account)[i].display();
+                account[i]->display();
             }
         }
     }
@@ -88,11 +88,12 @@ public:
 
 int main()
 {
-   Bank b1;
-   b1.addAccount(300);
-   Bank b2;
-   b2.addAccount(1100);
-   b2.displayHighValueAccount();
-
-
+    Bank b1;
+    b1.addAccount(300);
+    Bank b2;
+    b2.addAccount(1100);
+    b2.displayHighValueAccount();
+    Bank b3;
+    b3.addAccount(1300);
+    b3.displayHighValueAccount();
 }
