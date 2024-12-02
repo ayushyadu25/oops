@@ -1,0 +1,179 @@
+<<<<<<< HEAD
+Constant Data Member-
+     In C++, a const data member is a member of a class whose value cannot be modified once it is       initialized.
+A const data member must be initialized at the time of its construction. This can be done using:
+•	Constructor initialization list.
+•	Default member initializers 
+The value of a const data member cannot be modified after initialization.
+Each instance of the class can have its own unique value for the const data member, as it's initialized by the constructor.
+For example :
+
+#include <iostream>
+using namespace std;
+class MyClass {
+    const int myConst;  // Constant data member
+public:
+    // Constructor to initialize the const data member
+    MyClass(int value) : myConst(value) {}
+
+    void display() const {
+        cout << "The value of myConst is: " << myConst << endl;
+    }
+};
+
+int main() {
+    MyClass obj1(10);
+    obj1.display();
+
+    MyClass obj2(20);
+    obj2.display();
+
+    return 0;
+}
+Output for this code - 
+The value of myConst is: 10
+The value of myConst is: 20
+
+
+
+
+
+Constant Member function-
+
+Constant member functions are those functions that are denied permission to change the values of the data members of their class. To make a member function constant, the keyword const is appended to the function prototype and also to the function definition header.
+
+for example: 
+
+    return_type function_name () const
+    {
+         //function body
+    }
+
+Some Important Points -
+
+1.  When a function is declared as const, it can be called on any type of object, const object as well as non-const     objects.
+2.  Whenever an object is declared as const, it needs to be initialized at the time of declaration. however, the     object initialization while declaring is possible only with the help of constructors.
+3.  A function becomes const when the const keyword is used in the function’s declaration. The idea of const     functions is not to allow them to modify the object on which they are called.
+4.  It is recommended practice to make as many functions const as possible so that accidental changes to objects are     avoided.
+
+Example code:
+
+// C++ program to demonstrate that data members can be
+// updated in a member function that is not constant.
+
+#include <iostream>
+using namespace std;
+
+class Demo {
+    int x;
+
+public:
+    void set_data(int a) { x = a; }
+
+    // non const member function
+    // data can be updated
+    int get_data()
+    {
+        ++x;
+        return x;
+    }
+};
+
+main()
+{
+    Demo d;
+    d.set_data(10);
+    cout << d.get_data();
+
+    return 0;
+}
+=======
+Constant Data Member-
+     In C++, a const data member is a member of a class whose value cannot be modified once it is       initialized.
+A const data member must be initialized at the time of its construction. This can be done using:
+•	Constructor initialization list.
+•	Default member initializers 
+The value of a const data member cannot be modified after initialization.
+Each instance of the class can have its own unique value for the const data member, as it's initialized by the constructor.
+For example :
+
+#include <iostream>
+using namespace std;
+class MyClass {
+    const int myConst;  // Constant data member
+public:
+    // Constructor to initialize the const data member
+    MyClass(int value) : myConst(value) {}
+
+    void display() const {
+        cout << "The value of myConst is: " << myConst << endl;
+    }
+};
+
+int main() {
+    MyClass obj1(10);
+    obj1.display();
+
+    MyClass obj2(20);
+    obj2.display();
+
+    return 0;
+}
+Output for this code - 
+The value of myConst is: 10
+The value of myConst is: 20
+
+
+
+
+
+Constant Member function-
+
+Constant member functions are those functions that are denied permission to change the values of the data members of their class. To make a member function constant, the keyword const is appended to the function prototype and also to the function definition header.
+
+for example: 
+
+    return_type function_name () const
+    {
+         //function body
+    }
+
+Some Important Points -
+
+1.  When a function is declared as const, it can be called on any type of object, const object as well as non-const     objects.
+2.  Whenever an object is declared as const, it needs to be initialized at the time of declaration. however, the     object initialization while declaring is possible only with the help of constructors.
+3.  A function becomes const when the const keyword is used in the function’s declaration. The idea of const     functions is not to allow them to modify the object on which they are called.
+4.  It is recommended practice to make as many functions const as possible so that accidental changes to objects are     avoided.
+
+Example code:
+
+// C++ program to demonstrate that data members can be
+// updated in a member function that is not constant.
+
+#include <iostream>
+using namespace std;
+
+class Demo {
+    int x;
+
+public:
+    void set_data(int a) { x = a; }
+
+    // non const member function
+    // data can be updated
+    int get_data()
+    {
+        ++x;
+        return x;
+    }
+};
+
+main()
+{
+    Demo d;
+    d.set_data(10);
+    cout << d.get_data();
+
+    return 0;
+}
+>>>>>>> aeef39029bae6fa4762930a7cf212d2170919c01
